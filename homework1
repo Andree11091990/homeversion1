@@ -1,0 +1,51 @@
+public class HotBeverage {
+    private String name;
+    private itn volume;
+    public HotBeverage(String name, itn volume) {
+        this.name = name;
+        this volume = volume 
+    }
+    public String getName(){
+        return name
+    }
+    public void setName(String name){
+        this name = name;
+    }
+    public int getVolume (){
+        return volume
+    }
+    public void setVolume(int volume) {
+        this volume = volume
+    }
+}
+public class HotBeverageWithTemperature extends HotBevaerage {
+    private int temperature:
+    public HotBeverageWithTemperature(String name, int volume, int temperature) {
+        super(name, volume);
+        this.temperature = temperature;
+        }
+    public int getTemperature() {
+        returt temperature;
+    }
+    public void setTemperature(int temperature) {
+        this.temperature = temperature;
+    }
+}
+public interface VendingMachine {
+    HotBevaerage getProduct(String name, int volume, int temperature)
+}
+public class HotBeverageVendingMachine impLements VendingMachine {
+    @Override
+    public HotBeverage getProduct( String name, int volume, int temperature) {
+        return new HotBeverageWithTemperature (name, volume, temperature);
+    }
+}
+public class Main {
+    public static void main (String[] args) {
+        HotBeverage tea = new HotBeverageWithTemperature( "Чай", 200, 80);
+        HotBeverage coffee = new HotBeverageWithTemperature ("Кофе", 300, 90);
+        HotBeverageVendingMachine VendingMachine = new HotBeverageVendingMachine();
+        HotBeverage teaFromMachine = vendingMachine.getProduct("Чай", 200, 80);
+        HotBeverage coffeeFromMachine = vendingMachine.getProduct("Кофе", 300, 90)
+    }
+}
